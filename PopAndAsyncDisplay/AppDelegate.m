@@ -1,12 +1,6 @@
-//
-//  AppDelegate.m
-//  PopAndAsyncDisplay
-//
-//  Created by Luke Parham on 4/9/15.
-//  Copyright (c) 2015 Luke Parham. All rights reserved.
-//
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +10,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    CGRect r = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
+    _window = [[UIWindow alloc] initWithFrame:r];
+    
+    UIViewController *vc = [[ViewController alloc] init];
+    
+    [_window setRootViewController:vc];
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
